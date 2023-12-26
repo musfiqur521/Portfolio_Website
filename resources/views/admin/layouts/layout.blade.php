@@ -10,16 +10,16 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 <!-- CSS Libraries -->
-<link rel="stylesheet" href="{{ asset('assets/css/plugins/selectric.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/plugins/summernote-bs4.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-tagsinput.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-timepicker.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/plugins/daterangepicker.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/plugins/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/selectric.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/summernote-bs4.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/bootstrap-tagsinput.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/bootstrap-timepicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/daterangepicker.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/select2.min.css') }}">
 
 <!-- Template CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/components.css') }}">
 </head>
 
 <body>
@@ -54,22 +54,22 @@
 
 <!-- JS Libraies -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="{{ asset('assets/js/plugins/jquery.selectric.min.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/jquery.uploadPreview.min.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/bootstrap-tagsinput.min.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/daterangepicker.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/select2.full.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/plugins/jquery.selectric.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/plugins/jquery.uploadPreview.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/plugins/bootstrap-tagsinput.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/plugins/bootstrap-timepicker.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/plugins/daterangepicker.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/plugins/select2.full.min.js') }}"></script>
 
 
 <!-- Template JS File -->
-<script src="{{ asset('assets/js/scripts.js') }}"></script>
-<script src="{{ asset('assets/js/custom.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/scripts.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/custom.js') }}"></script>
 
 <!-- Page Specific JS File -->
-<script src="{{ asset('assets/js/page/features-post-create.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/page/features-post-create.js') }}"></script>
 <!-- Page Specific JS File -->
-<script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/page/forms-advanced-forms.js') }}"></script>
 </body>
 </html>
 
