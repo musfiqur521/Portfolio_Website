@@ -55,7 +55,7 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Hero</span></a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li><a class="nav-link" href="">Hero section</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.hero.index') }}">Hero section</a></li>
 
                 </ul>
                 </li>
