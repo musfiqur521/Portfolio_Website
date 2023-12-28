@@ -21,6 +21,7 @@
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/components.css') }}">
+@vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 
 <body>
@@ -82,6 +83,7 @@
 
     @endif
 </script>
+@stack('scripts')
 </body>
 </html>
 
