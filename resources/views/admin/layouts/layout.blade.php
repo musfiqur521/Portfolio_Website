@@ -19,10 +19,12 @@
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugins/select2.min.css') }}">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
+@vite(['resources/css/app.css','resources/js/app.js'])
+
 <!-- Template CSS -->
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/components.css') }}">
-@vite(['resources/css/app.css','resources/js/app.js'])
+
 </head>
 
 <body>
