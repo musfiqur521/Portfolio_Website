@@ -87,6 +87,11 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $service = Service::findOrFail($id);
+        $service->delete();
+
+        // toastr()->success('Congrats','Deleted successfully');
+
+        // return redirect()->route('admin.service.index');
     }
 }

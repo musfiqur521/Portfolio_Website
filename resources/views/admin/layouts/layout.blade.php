@@ -99,11 +99,13 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    //sweetalert delete
         $('body').on('click', '.delete-item', function(e){
             e.preventDefault();
             let deleteUrl = $(this).attr('href');
-            //sweetalert
-                            Swal.fire({
+
+            Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
                 icon: "warning",
@@ -129,7 +131,7 @@
                         }
                     })
                 }
-                });
+            });
         })
     });
 </script>
