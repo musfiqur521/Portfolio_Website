@@ -18,12 +18,19 @@
                     <h4>Create Service</h4>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.service.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
-                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
                             <div class="col-sm-12 col-md-7">
-                            <input type="text" name="title" class="form-control">
+                            <input type="text" name="name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-4">
+                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
+                            <div class="col-sm-12 col-md-7">
+                            <textarea name="description" class="form-control" style="height: 100px"></textarea>
                             </div>
                         </div>
 
