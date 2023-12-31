@@ -22,7 +22,10 @@ class ServiceDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'service.action')
+            ->addColumn('action', function($query){
+                return '<a href="'.route('admin.service.edit', $query->id).'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                        <a href="'.route('admin.service.destroy', $query->id).'" class="btn btn-sm btn-danger delete-item"><i class="fa fa-trash"></i></a>';
+            })
             ->setRowId('id');
     }
 
@@ -44,7 +47,7 @@ class ServiceDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(0)
                     ->selectStyleSingle()
                     ->buttons([
                         Button::make('excel'),
@@ -62,15 +65,14 @@ class ServiceDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::make('id')->width(100),
+            Column::make('name')->width(400),
+            Column::make('description'),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+            ->exportable(false)
+            ->printable(false)
+            ->width(200)
+            ->addClass('text-center'),
         ];
     }
 
