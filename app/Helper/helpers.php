@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\File;
 
 //  Handle file upload
-function handleupload($inputName, $model=null){
+function handleUpload($inputName, $model=null){
     try{
 
         if(request()->hasFile($inputName)){
