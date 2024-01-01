@@ -80,6 +80,13 @@ class AboutController extends Controller
         return redirect()->route('admin.about.index');
     }
 
+    //Resume Download
+    public function resumeDownload()
+    {
+        $about = About::first();
+        return response()->download(public_path($about->resume));
+    }
+
     /**
      * Remove the specified resource from storage.
      */
