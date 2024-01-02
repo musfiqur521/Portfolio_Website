@@ -5,6 +5,7 @@ namespace App\DataTables;
 use App\Models\PortfolioItem;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
+
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
@@ -22,7 +23,21 @@ class PortfolioItemDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'portfolioitem.action')
+            ->addColumn('image', function($query){
+                return '<img style="width:70px" src="'.asset($query->image).'"></img>';
+            })
+            ->addColumn('created_at', function($query){
+                return date('d-m-Y', strtotime($query->created_at));
+            })
+            ->addColumn('category', function($query){
+                return $query->category->name;
+            })
+            ->addColumn('action', function($query){
+                    return '<a href="'.route('admin.portfolio-item.edit', $query->id).'" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+
+                            <a href="'.route('admin.portfolio-item.destroy', $query->id).'" class="btn btn-sm btn-danger delete-item"><i class="fa fa-trash"></i></a>';
+                })
+            ->rawColumns(['image','action'])
             ->setRowId('id');
     }
 
@@ -44,7 +59,7 @@ class PortfolioItemDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(0)
                     ->selectStyleSingle()
                     ->buttons([
                         Button::make('excel'),
@@ -62,15 +77,18 @@ class PortfolioItemDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+
+            Column::make('id')->width(100),
+            Column::make('image')->width(100),
+            Column::make('title'),
+            Column::make('category'),
+            Column::make('created_at'),
+
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(200)
                   ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
         ];
     }
 
