@@ -86,7 +86,6 @@ class TyperTitleController extends Controller
         $title = TyperTitle::findOrFail($id);
         $title->delete();
 
-        // toastr()->success('Deleted successfully!');
-        // return redirect()->route('admin.typer-title.index');
+    
     }
 }

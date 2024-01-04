@@ -81,7 +81,31 @@ class PortfolioItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+        $request->validate([
+            'image' => ['image', 'max:5000'],
+            'title' => ['required', 'max:255'],
+            'description' => ['required'],
+            'category_id' => ['required', 'numeric'],
+            'client' => ['max:255'],
+            'website' => ['url'],
+
+        ]);
+
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        $imagepath = handleUpload('image', $portfolioItem);
+
+
+        $portfolioItem->image = (!empty($imagepath) ? $imagepath : $portfolioItem->image);
+        $portfolioItem->title = $request->title;
+        $portfolioItem->description = $request->description;
+        $portfolioItem->category_id = $request->category_id;
+        $portfolioItem->client = $request->client;
+        $portfolioItem->website = $request->website;
+        $portfolioItem->save();
+
+        toastr()->success('Portfolio item Update successfully');
+
+        return redirect()->route('admin.portfolio-item.index');
     }
 
     /**
@@ -89,6 +113,8 @@ class PortfolioItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $portfolioItem = PortfolioItem::findOrFail($id);
+        deleteFileIfExist($portfolioItem->image);
+        $portfolioItem->delete();
     }
 }

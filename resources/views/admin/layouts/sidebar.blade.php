@@ -74,6 +74,7 @@
 
                         <li><a class="nav-link" href="{{ route('admin.category.index') }}">Category</a></li>
                         <li><a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">Portfolio Item</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.portfolio-item.index') }}">Section Setting</a></li>
 
                     </ul>
                 </li>
